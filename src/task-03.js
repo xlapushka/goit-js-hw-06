@@ -13,25 +13,36 @@ const images = [
   },
 ];
 
-let ul = document.querySelector(".gallery");
-let Str = "";
+// let ul = document.querySelector(".gallery");
+// let Str = "";
 
+// images.forEach((img) => {
+//   const url = img.url;
+//   const alt = img.alt;
+
+//   let newEl = document.createElement("li");
+//   let newImg = document.createElement("img");
+
+//   newImg.setAttribute("src", `${url}`);
+//   newImg.setAttribute("alt", `${alt}`);
+//   newImg.setAttribute("width", "250px");
+//   newEl.append(newImg);
+
+//   Str += newEl.outerHTML;
+// });
+
+// ul.insertAdjacentHTML("afterbegin", `${Str}`);
+
+let ul = document.querySelector(".gallery");
+let str = "";
 
 images.forEach((img) => {
   const url = img.url;
   const alt = img.alt;
 
-  let newEl = document.createElement("li");
-  let newImg = document.createElement("img");
+  let newEl = `<li><img src=${url} alt=${alt} width="250px"/></li>`;
 
-  newImg.setAttribute("src", `${url}`);
-  newImg.setAttribute("alt", `${alt}`);
-  newImg.setAttribute("width", "250px");
-  newEl.append(newImg);
-
-  Str += newEl.outerHTML;
+  str += newEl;
 });
 
-
-ul.insertAdjacentHTML("afterbegin", `${Str}`);
-
+ul.insertAdjacentHTML("afterbegin", `${str}`);

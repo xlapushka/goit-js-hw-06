@@ -12,16 +12,28 @@ function getRandomHexColor() {
 }
 
 function createDivs() {
-  let amount = number.value;
-  createBoxes(amount);
+  let amount = +number.value;
+  let min = +number.min;
+  let max = +number.max;
+  let step = +number.step;
+
+  if (min <= amount && amount <= max) {
+    createBoxes(amount, step);
+  } else {
+    alert(
+      `Please, enter a number, bigger then ${min - 1} and smaller then ${
+        max + 1
+      }!`
+    );
+  }
 }
 
-function createBoxes(amount) {
+function createBoxes(amount, step) {
   const boxes = document.querySelector("#boxes");
   let divs = document.createElement("div");
   let a = 30;
 
-  for (let i = 0; i < amount; i++) {
+  for (let i = 1; i <= amount; i += step) {
     let div = document.createElement("div");
     div.setAttribute(
       "style",

@@ -6,3 +6,5 @@ currentName.addEventListener("input", (event) => {
     ? (output.textContent = "Anonymous")
     : (output.textContent = event.currentTarget.value);
 });
+
+// Не зрозуміла про "тут можна коротше"//

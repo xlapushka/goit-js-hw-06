@@ -7,12 +7,10 @@ console.log("Number of categories: ", quanityOfLiItem.length);
 // console.log(liItems[0] === quanityOfLiItem[0]);
 
 liItems.forEach((item) => {
-  const itemName = item.firstElementChild;
-  const itemNameTextContent = itemName.textContent;
+  const itemNameTextContent = item.firstElementChild.textContent;
 
-  const itemNameNeibor = itemName.nextElementSibling;
-  const quanityOfLi = itemNameNeibor.children;
-  const quanityOfLiLength = quanityOfLi.length;
+  const quanityOfLiLength =
+    item.firstElementChild.nextElementSibling.children.length;
 
   console.log("Category: ", itemNameTextContent);
   console.log("Elements: ", quanityOfLiLength);
